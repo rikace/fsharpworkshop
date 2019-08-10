@@ -13,8 +13,8 @@ let getPurchases customer =
     else (customer, 80M)
 
 let increaseCredit condition customer =
-    if condition customer then { customer with Credit = customer.Credit + 100M<USD> }
-    else { customer with Credit = customer.Credit + 50M<USD> }
+    if condition customer then { customer with Credit = customer.Credit + 100M }
+    else { customer with Credit = customer.Credit + 50M }
 
 let increaseCreditUsingVip = increaseCredit (fun c -> c.IsVip)
 
@@ -33,10 +33,10 @@ let getAlert customer =
 
 let getCustomer id =
     let customers = [
-        { Id = 1; IsVip = false; Credit = 0m<USD>; PersonalDetails = Some { FirstName = "John"; LastName = "Doe"; DateOfBirth = DateTime(1980, 1, 1) }; Notifications = NoNotifications }
-        { Id = 2; IsVip = false; Credit = 10m<USD>; PersonalDetails = None; Notifications = ReceiveNotifications(true, true) }
-        { Id = 3; IsVip = false; Credit = 30m<USD>; PersonalDetails = Some { FirstName = "Jane"; LastName = "Jones"; DateOfBirth = DateTime(2010, 2, 2) }; Notifications = ReceiveNotifications(true, false) }
-        { Id = 4; IsVip = true;  Credit = 50m<USD>; PersonalDetails = Some { FirstName = "Joe"; LastName = "Smith"; DateOfBirth = DateTime(1986, 3, 3) }; Notifications = ReceiveNotifications(false, true) }
+        { Id = 1; IsVip = false; Credit = 0m; PersonalDetails = Some { FirstName = "John"; LastName = "Doe"; DateOfBirth = DateTime(1980, 1, 1) }; Notifications = NoNotifications }
+        { Id = 2; IsVip = false; Credit = 10m; PersonalDetails = None; Notifications = ReceiveNotifications(true, true) }
+        { Id = 3; IsVip = false; Credit = 30m; PersonalDetails = Some { FirstName = "Jane"; LastName = "Jones"; DateOfBirth = DateTime(2010, 2, 2) }; Notifications = ReceiveNotifications(true, false) }
+        { Id = 4; IsVip = true;  Credit = 50m; PersonalDetails = Some { FirstName = "Joe"; LastName = "Smith"; DateOfBirth = DateTime(1986, 3, 3) }; Notifications = ReceiveNotifications(false, true) }
     ]
     customers
     |> List.find (fun c -> c.Id = id)

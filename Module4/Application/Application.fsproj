@@ -20,4 +20,8 @@
     <PackageReference Include="FSharp.Data" Version="3.0.0-beta4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Data\Customer.txt" />
+  </ItemGroup>
+
 </Project>

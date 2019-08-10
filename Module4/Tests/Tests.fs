@@ -10,7 +10,7 @@ open Services
 let customer = {
     Id = 1
     IsVip = false
-    Credit = 0M<USD>
+    Credit = 0M
     PersonalDetails = Some {
         FirstName = "John"
         LastName = "Doe"
@@ -26,14 +26,14 @@ let customer = {
 //
 //[<Fact>]
 //let ``4-2 Upgrade customer``() =
-//    let service = CustomerService()
+//    let service = CustomerService() :> ICustomerService
 //    let upgradedCustomer = service.UpgradeCustomer 2
 //    test <@ upgradedCustomer.IsVip @>
 //    test <@ upgradedCustomer.Credit = 110M<USD> @>
 //
 //[<Fact>]
 //let ``4-3 Get customer info``() =
-//    let service = CustomerService()
+//    let service = CustomerService() :> ICustomerService
 //    let info = service.GetCustomerInfo customer
 //    let expectedInfo = "Id: 1, IsVip: false, Credit: 0.00, IsAdult: true, Alert: Alert for customer 1"
 //    test <@ info = expectedInfo @>

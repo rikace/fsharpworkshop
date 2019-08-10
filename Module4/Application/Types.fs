@@ -8,9 +8,6 @@ type PersonalDetails = {
     DateOfBirth: DateTime
 }
 
-[<Measure>] type EUR
-[<Measure>] type USD
-
 type Notifications =
     | NoNotifications
     | ReceiveNotifications of receiveDeals: bool * receiveAlerts: bool
@@ -18,7 +15,12 @@ type Notifications =
 type Customer = {
     Id: int
     IsVip: bool
-    Credit: decimal<USD>
+    Credit: decimal
     PersonalDetails: PersonalDetails option
     Notifications: Notifications
 }
+
+type PurchaseHistory = {
+    CustomerId : int
+    PurchasesByMonth : decimal list
+    }

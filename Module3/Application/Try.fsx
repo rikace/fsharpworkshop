@@ -8,7 +8,7 @@ open Functions
 let customer = {
     Id = 1
     IsVip = false
-    Credit = 0M<USD>
+    Credit = 0M 
     PersonalDetails = Some {
         FirstName = "John"
         LastName = "Doe"
@@ -25,3 +25,4 @@ let calculatedPurchases = getPurchases customer
 let customerWithMoreCredit = customer |> increaseCredit (fun c -> c.IsVip)
 
 let upgradedCustomer = upgradeCustomer customer
+

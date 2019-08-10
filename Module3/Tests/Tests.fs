@@ -5,11 +5,11 @@ open Xunit
 open Swensen.Unquote
 open Types
 open Functions
-
+//
 //let customer = {
 //    Id = 1
 //    IsVip = false
-//    Credit = 0M<USD>
+//    Credit = 0M
 //    PersonalDetails = Some {
 //        FirstName = "John"
 //        LastName = "Doe"
@@ -25,7 +25,7 @@ open Functions
 //[<Fact>]
 //let ``3-2 Increase credit using USD``() =
 //    let upgradedCustomer = increaseCreditUsingVip customer
-//    test <@ upgradedCustomer.Credit = 50M<USD> @>
+//    test <@ upgradedCustomer.Credit = 50M @>
 //
 //[<Fact>]
 //let ``3-3 Adult customer``() =

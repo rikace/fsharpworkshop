@@ -4,9 +4,8 @@ open Types
 open System
 
 let tryPromoteToVip purchases =
-    let customer, amount = purchases
-    if amount > 100M then { customer with IsVip = true }
-    else customer
+    let customer, _ = purchases
+    customer
 
 let getPurchases customer =
     if customer.Id % 2 = 0 then (customer, 120M)
@@ -19,3 +18,4 @@ let increaseCredit condition customer =
 let increaseCreditUsingVip = increaseCredit (fun c -> c.IsVip)
 
 let upgradeCustomer = getPurchases >> tryPromoteToVip >> increaseCreditUsingVip
+
